@@ -53,7 +53,8 @@ public class LoginFilter extends AbstractAuthenticationProcessingFilter {
             this.user = userDetails;
             if ( userDetails != null){
 //                boolean equals = userDetails.getPassword().equals(user.getPassword());
-                boolean matches = passwordEncoder.matches(user.getPassword(), userDetails.getPassword());
+                boolean matches = passwordEncoder
+                        .matches(user.getPassword(), userDetails.getPassword());
 
                 System.out.println(matches);
                 System.out.println("DONE");

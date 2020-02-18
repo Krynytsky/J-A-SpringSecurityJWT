@@ -14,6 +14,11 @@ public class UserServiceImplementation implements UserService {
     private UserDAO userDAO;
 
     @Override
+    public User findByToken(String token) {
+        return userDAO.findByToken(token);
+    }
+
+    @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         return userDAO.findByUsername(s);
     }

@@ -31,8 +31,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .antMatchers("/product/**").hasAnyRole("ADMIN")
 //                .antMatchers(HttpMethod.POST,"/product/save").hasAnyRole("ADMIN")
 //                .antMatchers(HttpMethod.POST,"/saveUser").permitAll()
-                .antMatchers(HttpMethod.POST,"/").permitAll()
-                .antMatchers(HttpMethod.POST,"/login").permitAll()
+                .antMatchers("/").permitAll()
+                .antMatchers("/login").permitAll()
                 .and()
                 .addFilterBefore(new AllRequestFilter(userService),UsernamePasswordAuthenticationFilter.class)
                 .addFilterBefore(new LoginFilter("/login", authenticationManager(), userService, passwordEncoder()), UsernamePasswordAuthenticationFilter.class);

@@ -8,4 +8,6 @@ import org.springframework.stereotype.Service;
 @Service
 public interface UserService extends UserDetailsService {
     void saveUser(User user);
+
+    User findByToken( String token);
 }
